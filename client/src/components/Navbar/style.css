@@ -59,26 +59,27 @@ input::-webkit-inner-spin-button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   width: 100%;
 }
 
 .navbar-container svg {
-  height: 50px;
-  width: 150px;
+  height: 100px;
+  width: 50px;
 }
 
 .navbar-container .menu-container {
   position: relative;
   z-index: 10;
+  margin-top: 20px;
 }
 
 .navbar-container .menu-container .burger-menu {
   position: relative;
   z-index: 2;
-  background-color: #ffc619;
+  background-color: #8C7AE6;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,12 +99,12 @@ input::-webkit-inner-spin-button {
   transition: 0.3s ease;
   width: 45px;
   height: 45px;
-  -webkit-box-shadow: 0px 3px 6px #95a5a6;
-          box-shadow: 0px 3px 6px #95a5a6;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-container .menu-container .burger-menu:hover {
-  background-color: rgba(233, 164, 16, 0.938);
+  background-color: purple;
 }
 
 .navbar-container .menu-container .burger-menu:active {
@@ -135,8 +136,8 @@ input::-webkit-inner-spin-button {
   z-index: 1;
   -webkit-clip-path: circle(0% at 100% 0%);
           clip-path: circle(0% at 100% 0%);
-  -webkit-box-shadow: 0px 3px 6px #95a5a6;
-          box-shadow: 0px 3px 6px #95a5a6;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,7 +151,7 @@ input::-webkit-inner-spin-button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #ffc619;
+  background-color: #8C7AE6;
   padding: 20px 25px 10px 25px;
   width: 200px;
   height: -webkit-fit-content;
@@ -176,12 +177,12 @@ input::-webkit-inner-spin-button {
 }
 
 .navbar-container .menu-container .side-menu a:hover {
-  background-color: rgba(233, 164, 16, 0.938);
+  background-color: purple;
   color: #ffffff;
 }
 
 .navbar-container .menu-container .side-menu button {
-  background-color: #f14646;
+  background-color: #F14646;
   padding: 4px 20px;
   border: none;
   outline: none;

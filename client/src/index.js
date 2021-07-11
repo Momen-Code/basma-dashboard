@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 
+document.querySelector("title").textContent = "بصمة";
+document.querySelector("html").setAttribute("lang", "ar");
+document.querySelector("html").setAttribute("dir", "rtl");
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

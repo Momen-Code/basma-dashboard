@@ -5,19 +5,20 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   svg {
-    height: 50px;
-    width: 150px;
+    height: 100px;
+    width: 50px;
   }
   .menu-container {
     position: relative;
     z-index: 10;
+    margin-top: 20px;
     .burger-menu {
       position: relative;
       z-index: 2;
-      background-color: $yellow-primary;
+      background-color: $purple-primary;
       border-radius: 50%;
       display: flex;
       flex-direction: column;
@@ -27,9 +28,9 @@
       transition: 0.3s ease;
       width: 45px;
       height: 45px;
-      box-shadow: 0px 3px 6px $gray;
+      box-shadow: 0px 3px 6px rgba($black,  0.3);
       &:hover {
-        background-color: rgba(233, 164, 16, 0.938);
+        background-color:purple;
       }
       &:active {
         transition: none;
@@ -54,12 +55,12 @@
       top: 0;
       z-index: 1;
       clip-path: circle(0% at 100% 0%);
-      box-shadow: 0px 3px 6px $gray;
+      box-shadow: 0px 3px 6px rgba($black,  0.3);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: $yellow-primary;
+      background-color: $purple-primary;
       padding: 20px 25px 10px 25px;
       width: 200px;
       height: fit-content;
@@ -79,7 +80,7 @@
         font-weight: bold;
         border-radius: 8px;
         &:hover {
-          background-color: rgba(233, 164, 16, 0.938);
+          background-color:purple;
           color: $white;
         }
       }

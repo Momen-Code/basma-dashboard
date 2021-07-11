@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+
+import { Link } from "react-router-dom";
 // import useLogin from "./hooks";
 
 //Styles
@@ -15,11 +17,16 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="container">
+        <div className="background-container">
+          <div className="layer">
+            <h2>نظام بصمة لمتابعة الحضور والانصراف</h2>
+          </div>
+        </div>
         <div className="form-container">
           <div className="logo-container">
             <Logo />
           </div>
-          <form >
+          <form>
             <div className="username-container">
               <input
                 type="text"
@@ -37,14 +44,9 @@ const Login = () => {
               />
             </div>
             <div className="button-container">
-              <button type="submit" >تسجيل الدخول</button>
+              <Link to="/attendance-record">تسجيل الدخول</Link>
             </div>
           </form>
-        </div>
-        <div className="background-container">
-          <div className="layer">
-            <h2>You're only as good as your last haircut</h2>
-          </div>
         </div>
       </div>
     </div>

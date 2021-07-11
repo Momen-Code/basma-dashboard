@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useOnClickOutside } from "../../hooks";
 
 
-import { useAuthContext } from "../../Providers";
+// import { useAuthContext } from "../../Providers";
 
 //Styles
 import "./style.scss";
@@ -13,7 +13,7 @@ import "./style.scss";
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 
 const Navbar = () => {
-  const { setIsLoggedIn } = useAuthContext();
+  // const { setIsLoggedIn } = useAuthContext();
 
   const [visible, setVisible] = useState(false);
   const sideMenuRef = useRef(null);
@@ -32,9 +32,10 @@ const Navbar = () => {
           <span></span>
         </div>
         <div className={`side-menu ${visible ? "active" : ""}`}>
-          <Link to="/home">الكاشير</Link>
-          <Link to="/statistics">الإحصائيات</Link>
-          <button onClick={()=>setIsLoggedIn(false)}>تسجيل الخروج</button>
+          <Link to="/attendance-record">السجل</Link>
+          <Link to="/employees">الموظفين</Link>
+          <Link to="/settings">الاعدادات</Link>
+          <button >تسجيل الخروج</button>
         </div>
       </div>
     </div>

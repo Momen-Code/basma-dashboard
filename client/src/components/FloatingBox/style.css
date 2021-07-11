@@ -65,7 +65,7 @@ input::-webkit-inner-spin-button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgba(149, 165, 166, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   background-size: contain;
 }
 
@@ -74,8 +74,8 @@ input::-webkit-inner-spin-button {
   min-width: 30%;
   width: 400px;
   padding: 20px 30px;
-  -webkit-box-shadow: 0px 3px 6px #95a5a6;
-          box-shadow: 0px 3px 6px #95a5a6;
+  -webkit-box-shadow: 0px 3px 6px #000000;
+          box-shadow: 0px 3px 6px #000000;
   border-radius: 10px;
   max-width: 95%;
   text-align: center;
@@ -96,7 +96,7 @@ input::-webkit-inner-spin-button {
   width: 20px;
   height: 5px;
   border-radius: 10px;
-  background-color: #95a5a6;
+  background-color: #000000;
   -webkit-transform-origin: center;
           transform-origin: center;
   position: relative;
@@ -124,7 +124,7 @@ input::-webkit-inner-spin-button {
 }
 
 .floating-box-container .box-details .price {
-  color: #ffc619;
+  color: #8C7AE6;
   font-weight: bold;
   margin-top: 5px;
   font-size: 40px;
@@ -146,7 +146,7 @@ input::-webkit-inner-spin-button {
 }
 
 .floating-box-container .box-details .action-buttons button {
-  background-color: #ffc619;
+  background-color: #8C7AE6;
   border-radius: 10px;
   outline: none;
   border: none;
@@ -172,6 +172,6 @@ input::-webkit-inner-spin-button {
 }
 
 .floating-box-container .box-details .action-buttons .cancel-button button {
-  background-color: #f14646;
+  background-color: #F14646;
 }
 /*# sourceMappingURL=style.css.map */
