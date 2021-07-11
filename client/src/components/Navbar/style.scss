@@ -1,0 +1,106 @@
+@import "../../assets/styles/global";
+
+.navbar-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  svg {
+    height: 50px;
+    width: 150px;
+  }
+  .menu-container {
+    position: relative;
+    z-index: 10;
+    .burger-menu {
+      position: relative;
+      z-index: 2;
+      background-color: $yellow-primary;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.3s ease;
+      width: 45px;
+      height: 45px;
+      box-shadow: 0px 3px 6px $gray;
+      &:hover {
+        background-color: rgba(233, 164, 16, 0.938);
+      }
+      &:active {
+        transition: none;
+        transform: scale(0.95);
+      }
+      span {
+        border-top: 3px solid $white;
+        width: 17px;
+        border-radius: 5px;
+        margin: 2px;
+        // height: fit-content;
+      }
+      .middle {
+        width: 25px;
+      }
+    }
+    .remove {
+      box-shadow: none !important;
+    }
+    .side-menu {
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      clip-path: circle(0% at 100% 0%);
+      box-shadow: 0px 3px 6px $gray;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: $yellow-primary;
+      padding: 20px 25px 10px 25px;
+      width: 200px;
+      height: fit-content;
+      border-radius: 8px;
+      border-top-right-radius: 18px;
+      padding-top: 45px;
+      a {
+        width: 100%;
+        background-color: $white;
+        text-decoration: none;
+        color: black;
+        width: 100%;
+        height: 100%;
+        margin: 5px 0;
+        padding: 3px 0;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 8px;
+        &:hover {
+          background-color: rgba(233, 164, 16, 0.938);
+          color: $white;
+        }
+      }
+      button {
+        background-color: $red;
+        padding: 4px 20px;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        color: $white;
+        font-weight: bold;
+        margin-top: 10px;
+        cursor: pointer;
+        &:hover {
+          background-color: rgba($red,  0.7);
+        }
+      }
+    }
+    .active {
+      clip-path: circle(150% at 0 0);
+      transition: 0.5s ease;
+    }
+  }
+}

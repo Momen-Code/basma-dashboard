@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200&display=swap");
+/*****************************************/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/********************************************************/
+/******************************/
+/******************************/
+.login-container .container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px 0 30px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.login-container .container .form-container {
+  margin-right: 40px;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-container .container .form-container form {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.login-container .container .form-container form div {
+  width: 80%;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.login-container .container .form-container form div input {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 12px 20px;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+}
+
+.login-container .container .form-container form div button {
+  background-color: #ffc619;
+  padding: 8px 20px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-container .container .form-container form div button:hover {
+  background-color: #e9a410;
+}
+
+.login-container .container .background-container {
+  background: url(../../assets/images/finger-print.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  position: relative;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+
+.login-container .container .background-container .layer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-color: rgba(255, 198, 25, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.login-container .container .background-container .layer h2 {
+  color: #ffffff;
+  font-size: 50px;
+  width: 50%;
+  padding: 20px 25px;
+  font-family: 'Otomanopee One', sans-serif;
+}
+
+@media only screen and (max-width: 1024px) {
+  .login-container .container .background-container .layer h2 {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 798px) {
+  .login-container .container {
+    padding-top: 30px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .login-container .container .form-container {
+    margin-right: 0px;
+  }
+  .login-container .container .form-container form {
+    margin-top: 5vh;
+    padding: 0px 30px;
+  }
+  .login-container .container .form-container form div {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .login-container .container .form-container form div.button-container {
+    margin-top: 40px;
+  }
+  .login-container .container .form-container form a {
+    display: inline-block;
+    width: 80%;
+  }
+  .login-container .container .background-container .layer h2 {
+    font-size: 24px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

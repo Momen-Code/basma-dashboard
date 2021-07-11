@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200&display=swap");
+/*****************************************/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/********************************************************/
+/******************************/
+/******************************/
+.statistics-container .selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.statistics-container .selection > div:nth-child(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-weight: bold;
+  margin-left: 40px;
+  text-align: center;
+}
+
+.statistics-container .selection label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.statistics-container .selection .select-item {
+  position: relative;
+}
+
+.statistics-container .selection .select-item select {
+  background-color: #ffc619;
+  -webkit-box-shadow: 0px 3px 6px rgba(149, 165, 166, 0.3);
+          box-shadow: 0px 3px 6px rgba(149, 165, 166, 0.3);
+  border-radius: 30px;
+  padding: 5px 60px;
+  text-align-last: center;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.statistics-container .selection .select-item span {
+  position: absolute;
+  left: 10%;
+  top: 80%;
+  display: block;
+  -webkit-transform: translateY(-5px) rotate(0deg);
+          transform: translateY(-5px) rotate(0deg);
+  border: 4px solid transparent;
+  border-top: 7px solid #ffffff;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-transform-origin: 6px 4px;
+          transform-origin: 6px 4px;
+}
+
+.statistics-container .selection .picker {
+  margin-top: 0 !important;
+}
+
+.statistics-container .selection .picker div {
+  margin: 0;
+}
+
+.statistics-container .selection .picker input {
+  background-color: #ffc619;
+  border-radius: 30px;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  padding: 5px 0;
+  -webkit-box-shadow: 0px 3px 6px rgba(149, 165, 166, 0.3);
+          box-shadow: 0px 3px 6px rgba(149, 165, 166, 0.3);
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.statistics-container .table-container {
+  -webkit-box-shadow: 0px 3px 6px rgba(149, 165, 166, 0.3);
+          box-shadow: 0px 3px 6px rgba(149, 165, 166, 0.3);
+  overflow: hidden;
+  overflow-x: auto;
+  margin: 50px 20px;
+  border-radius: 15px;
+  width: 70%;
+  margin: auto;
+}
+
+.statistics-container .table-container table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 700px;
+}
+
+.statistics-container .table-container table thead {
+  background-color: #ffc619;
+}
+
+.statistics-container .table-container table thead th {
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.statistics-container .table-container table thead th:nth-child(1) {
+  text-align: center;
+}
+
+.statistics-container .table-container table tbody tr td {
+  padding: 12px 0px;
+  padding-left: 25px;
+  font-weight: bold;
+}
+
+.statistics-container .table-container table tbody tr td:nth-child(1) {
+  text-align: center;
+  padding-left: 0;
+  padding: 0 10px;
+}
+
+.statistics-container .table-container table tbody tr:nth-child(odd) {
+  background-color: rgba(255, 198, 25, 0.1);
+}
+
+.statistics-container .table-container table tbody tr .total {
+  color: #ffc619;
+  font-weight: bolder;
+  font-family: "Changa", sans-serif;
+}
+
+.statistics-container .export-button {
+  width: 70%;
+  margin: 30px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.statistics-container .export-button button {
+  background-color: #ffc619;
+  border-radius: 10px;
+  padding: 4px 25px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.statistics-container .export-button button:hover {
+  background-color: rgba(233, 164, 16, 0.938);
+}
+
+.statistics-container .export-button button:active {
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+@media only screen and (max-width: 1200px) {
+  .statistics-container .table-container {
+    width: 90%;
+  }
+  .statistics-container .export-button {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .statistics-container .selection {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .statistics-container .selection > div:nth-child(1) {
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
