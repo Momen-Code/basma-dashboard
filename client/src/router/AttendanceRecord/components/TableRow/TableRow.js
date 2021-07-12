@@ -19,7 +19,7 @@ const TableRow = ({
       <td>momen</td>
       <td>532121</td>
       <td>515562</td>
-      <td className="attendance">{attendance}</td>
+      <td className={`attendance  ${attendance == "حضور"? "purpleBg" : "blackBg"}`} ><span>{attendance}</span></td>
       {/* <td>
         {new Intl.DateTimeFormat("ar-EG", {
           year: "numeric",

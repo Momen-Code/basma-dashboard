@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import {Navbar} from './components';
 
-import {AttendanceRecord, Login} from './router'
+import {AttendanceRecord, Employees, Login, Settings} from './router'
 
 
 function App() {
@@ -19,6 +19,8 @@ function App() {
           <div>
             <Navbar />
           <Route exact path="/attendance-record" component={AttendanceRecord} />
+          <Route exact path="/employees" component={Employees} />
+          <Route exact path="/settings" component={Settings} />
 
           </div>
         </Switch>

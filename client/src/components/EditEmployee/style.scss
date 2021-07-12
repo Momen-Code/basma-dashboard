@@ -1,0 +1,6 @@
+@import "../../assets/styles/global";
+
+
+.edit-employee-container{
+    @include floatingBox;
+}
