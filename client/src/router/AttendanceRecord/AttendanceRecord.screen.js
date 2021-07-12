@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { TableRow } from "./components";
+import { DatePicker } from "@y0c/react-datepicker";
 
 //Styles
 import "./style.scss";
+import "@y0c/react-datepicker/assets/styles/calendar.scss";
 
 //hooks
 // import useStatistics from "./hooks";
 
-const Statistics = () => {
+const AttendanceRecord = () => {
   // const { getData } = useStatistics();
-  const [statisticsData, setStatisticsData] = useState({});
+  const [attendanceData, setAttendanceData] = useState({});
   const [dateSelected, setDateSelected] = useState(formatDate(new Date()));
   const [employeeSelected, setEmployeeSelected] = useState("");
-  const [csvData, setCsvData] = useState([]);
+  const [searchId, setSearchId] = useState("");
 
   // useEffect(() => {
   //   (async () => {
@@ -22,32 +24,9 @@ const Statistics = () => {
   //   })();
   // }, [dateSelected, employeeSelected]);
 
-  useEffect(() => {
-    if (statisticsData.transactions) {
-      setCsvData(
-        statisticsData.transactions.map((item, index) => [
-          index + 1,
-          item.employee.name,
-          item.services &&
-            item.services.map(
-              (service, index) =>
-                service.name + "    " + service.price + "  ج.م\n"
-            ),
-          item.total,
-          item.cashier.name,
-          new Intl.DateTimeFormat("ar-EG", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-            hour: "2-digit",
-            minute: "2-digit",
-          }).format(Date.parse(item.time)),
-        ])
-      );
-    }
-  }, [statisticsData]);
   return (
-    <div className="statistics-container">
+    <div className="attendance-record-container">
+      <h2>سجل الحضور والانصراف</h2>
       <div className="selection">
         <div className="select-item">
           <div>
@@ -59,16 +38,16 @@ const Statistics = () => {
             }}
           >
             <option value="">الكل</option>
-            {statisticsData.employees &&
-              statisticsData.employees.map((employee, index) => (
+            {attendanceData.employees &&
+              attendanceData.employees.map((employee, index) => (
                 <option value={employee._id}>{employee.name}</option>
               ))}
           </select>
           <span></span>
         </div>
-        <div>
+        <div className="select-item">
           <div>
-            <label>اختر اليوم</label>
+            <label>اختر موظف</label>
           </div>
           <select
             onChange={async (e) => {
@@ -76,12 +55,37 @@ const Statistics = () => {
             }}
           >
             <option value="">الكل</option>
-            {statisticsData.employees &&
-              statisticsData.employees.map((employee, index) => (
+            {attendanceData.employees &&
+              attendanceData.employees.map((employee, index) => (
                 <option value={employee._id}>{employee.name}</option>
               ))}
           </select>
           <span></span>
+        </div>
+        <div className="date-picker-container">
+          <div>
+            <label>اختر اليوم</label>
+          </div>
+          <DatePicker
+            initialDate={new Date().getTime()}
+            onChange={async (value) => {
+              console.log(value);
+              setDateSelected(formatDate(value));
+            }}
+            dateFormat="DD-MM-YYYY"
+            value={dateSelected}
+          />
+        </div>
+        <div className="search-item">
+          <div>
+            <label>ابحث برقم الموظف</label>
+          </div>
+          <input
+            type="text"
+            placeholder="#"
+            value={searchId}
+            onChange={(e) => setSearchId(e.target.value)}
+          />
         </div>
       </div>
       <div className="table-container">
@@ -90,21 +94,23 @@ const Statistics = () => {
             <tr>
               <th>#</th>
               <th>الموظف</th>
-              <th>الخدمات</th>
-              <th>الإجمالي</th>
-              <th>الكاشير</th>
+              <th>الرقم الوظيفي</th>
+              <th>الادارة</th>
+              <th>التسجيل</th>
               <th>الوقت</th>
             </tr>
           </thead>
           <tbody>
-            {statisticsData.transactions &&
-              statisticsData.transactions.map((item, index) => (
+            {/* {attendanceData.transactions &&
+              attendanceData.transactions.map((item, index) => (
                 <TableRow index={index} {...item} />
+              ))} */}
+              {[1,2,3,4].map((item, index)=>(
+                  <TableRow index={index}  attendance="حضور"/>
               ))}
           </tbody>
         </table>
       </div>
-
     </div>
   );
 };
@@ -119,4 +125,4 @@ const formatDate = (value) => {
   ].join("-");
 };
 
-export default Statistics;
+export default AttendanceRecord;

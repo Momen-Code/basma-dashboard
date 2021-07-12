@@ -1,0 +1,6 @@
+@import "../../assets/styles/global";
+
+
+.delete-employee-container{
+    @include floatingBox;
+}

@@ -12,14 +12,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba($gray, 0.5);
+  background-color: rgba($black, 0.5);
   background-size: contain;
   .box-details {
     background-color: $white;
     min-width: 30%;
     width: 400px;
     padding: 20px 30px;
-    box-shadow: 0px 3px 6px $gray;
+    box-shadow: 0px 3px 6px $black;
     border-radius: 10px;
     max-width: 95%;
     text-align: center;
@@ -34,7 +34,7 @@
         width: 20px;
         height: 5px;
         border-radius: 10px;
-        background-color: $gray;
+        background-color: $black;
         transform-origin: center;
         position: relative;
         right: -12px;
@@ -56,7 +56,7 @@
 
     }
     .price {
-      color: $yellow-primary;
+      color: $purple-primary;
       font-weight: bold;
       margin-top: 5px;
       font-size: 40px;
@@ -69,7 +69,7 @@
       flex-direction: row-reverse;
       margin-top: 15px;
       button {
-        background-color: $yellow-primary;
+        background-color: $purple-primary;
         border-radius: 10px;
         outline: none;
         border: none;

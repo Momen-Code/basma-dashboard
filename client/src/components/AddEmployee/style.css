@@ -47,11 +47,12 @@ input::-webkit-inner-spin-button {
 /********************************************************/
 /******************************/
 /******************************/
-.floating-box-container {
-  position: absolute;
+.add-employee-container {
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  bottom: 0;
   z-index: 20;
   width: 100%;
   min-height: 100vh;
@@ -69,19 +70,19 @@ input::-webkit-inner-spin-button {
   background-size: contain;
 }
 
-.floating-box-container .box-details {
+.add-employee-container .box-details {
   background-color: #ffffff;
   min-width: 30%;
   width: 400px;
   padding: 20px 30px;
-  -webkit-box-shadow: 0px 3px 6px #000000;
-          box-shadow: 0px 3px 6px #000000;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   max-width: 95%;
   text-align: center;
 }
 
-.floating-box-container .box-details .closing {
+.add-employee-container .box-details .closing {
   cursor: pointer;
   margin: 10px 0;
   position: relative;
@@ -91,47 +92,74 @@ input::-webkit-inner-spin-button {
   width: fit-content;
 }
 
-.floating-box-container .box-details .closing > span {
+.add-employee-container .box-details .closing > span {
   display: block;
   width: 20px;
   height: 5px;
   border-radius: 10px;
-  background-color: #000000;
+  background-color: #dcdde1;
   -webkit-transform-origin: center;
           transform-origin: center;
   position: relative;
   right: -12px;
 }
 
-.floating-box-container .box-details .closing > span:nth-child(1) {
+.add-employee-container .box-details .closing > span:nth-child(1) {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   top: 5px;
 }
 
-.floating-box-container .box-details .closing > span:nth-child(2) {
+.add-employee-container .box-details .closing > span:nth-child(2) {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
 
-.floating-box-container .box-details .closing:hover {
+.add-employee-container .box-details .closing:hover {
   opacity: 0.8;
 }
 
-.floating-box-container .box-details h4 {
-  font-size: 20px;
-  font-family: "Changa", sans-serif;
+.add-employee-container .box-details h4 {
+  font-size: 25px;
+  font-weight: 900;
 }
 
-.floating-box-container .box-details .price {
-  color: #8c7ae6;
+.add-employee-container .box-details form div {
+  width: 100%;
+  margin: 25px 0;
+}
+
+.add-employee-container .box-details form input {
+  width: 100%;
+  border-radius: 8px;
+  text-align: right;
+  background-color: #ffffff;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.add-employee-container .box-details form .confirmation-button {
+  margin-bottom: 0;
+}
+
+.add-employee-container .box-details form button {
+  background-color: #8c7ae6;
+  padding: 3px 40px;
+  color: #ffffff;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
   font-weight: bold;
-  margin-top: 5px;
-  font-size: 40px;
-  font-family: "Changa", sans-serif;
+  font-size: 18px;
 }
 
-.floating-box-container .box-details .action-buttons {
+.add-employee-container .box-details .action {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,7 +173,7 @@ input::-webkit-inner-spin-button {
   margin-top: 15px;
 }
 
-.floating-box-container .box-details .action-buttons button {
+.add-employee-container .box-details .action button {
   background-color: #8c7ae6;
   border-radius: 10px;
   outline: none;
@@ -159,19 +187,19 @@ input::-webkit-inner-spin-button {
   font-size: 16px;
 }
 
-.floating-box-container .box-details .action-buttons button:hover {
+.add-employee-container .box-details .action button:hover {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.floating-box-container .box-details .action-buttons button:active {
+.add-employee-container .box-details .action button:active {
   -webkit-transition: none;
   transition: none;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-.floating-box-container .box-details .action-buttons .cancel-button button {
+.add-employee-container .box-details .action .cancel button {
   background-color: #f14646;
 }
 /*# sourceMappingURL=style.css.map */

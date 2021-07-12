@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200&display=swap");
+/*****************************************/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/********************************************************/
+/******************************/
+/******************************/
+.attendance-record-container h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.attendance-record-container .selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.attendance-record-container .selection > div:nth-child(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-weight: bold;
+  margin-left: 40px;
+  text-align: center;
+}
+
+.attendance-record-container .selection label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.attendance-record-container .selection .select-item {
+  margin-left: 40px;
+  position: relative;
+}
+
+.attendance-record-container .selection .select-item select {
+  background-color: #8c7ae6;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  padding: 5px 60px;
+  text-align-last: center;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.attendance-record-container .selection .select-item span {
+  position: absolute;
+  left: 10%;
+  top: 80%;
+  display: block;
+  -webkit-transform: translateY(-5px) rotate(0deg);
+          transform: translateY(-5px) rotate(0deg);
+  border: 4px solid transparent;
+  border-top: 7px solid #ffffff;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-transform-origin: 6px 4px;
+          transform-origin: 6px 4px;
+}
+
+.attendance-record-container .selection .search-item {
+  margin-left: 40px;
+}
+
+.attendance-record-container .selection .search-item input {
+  background-color: #efefef;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  padding: 5px 15px;
+  text-align-last: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.attendance-record-container .selection .search-item input::-webkit-input-placeholder {
+  font-weight: bold;
+}
+
+.attendance-record-container .selection .search-item input:-ms-input-placeholder {
+  font-weight: bold;
+}
+
+.attendance-record-container .selection .search-item input::-ms-input-placeholder {
+  font-weight: bold;
+}
+
+.attendance-record-container .selection .search-item input::placeholder {
+  font-weight: bold;
+}
+
+.attendance-record-container .selection .date-picker-container {
+  margin-left: 40px;
+}
+
+.attendance-record-container .selection .date-picker-container .picker {
+  margin-top: 0 !important;
+}
+
+.attendance-record-container .selection .date-picker-container .picker div {
+  margin: 0;
+}
+
+.attendance-record-container .selection .date-picker-container .picker input {
+  background-color: #8c7ae6;
+  border-radius: 30px;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  padding: 5px 10px;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.attendance-record-container .table-container {
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  overflow-x: auto;
+  margin: 50px 20px;
+  border-radius: 15px;
+  width: 70%;
+  margin: auto;
+}
+
+.attendance-record-container .table-container table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 700px;
+}
+
+.attendance-record-container .table-container table thead {
+  background-color: #8c7ae6;
+}
+
+.attendance-record-container .table-container table thead th {
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.attendance-record-container .table-container table thead th:nth-child(1) {
+  text-align: center;
+}
+
+.attendance-record-container .table-container table tbody tr td {
+  padding: 12px 0px;
+  padding-left: 25px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.attendance-record-container .table-container table tbody tr td:nth-child(1) {
+  text-align: right;
+  direction: rtl;
+  text-align: center;
+  padding-left: 0;
+  padding: 0 10px;
+}
+
+.attendance-record-container .table-container table tbody tr .time {
+  direction: ltr;
+  text-align: end;
+  padding-left: 0;
+}
+
+.attendance-record-container .table-container table tbody tr .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+}
+
+.attendance-record-container .table-container table tbody tr .actions span {
+  margin-left: 20px;
+  padding: 2px 7px;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.attendance-record-container .table-container table tbody tr .actions span svg {
+  vertical-align: middle;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.attendance-record-container .table-container table tbody tr .actions .edit {
+  background-color: #8c7ae6;
+}
+
+.attendance-record-container .table-container table tbody tr .actions .delete {
+  background-color: #f14646;
+}
+
+.attendance-record-container .table-container table tbody tr:nth-child(odd) {
+  background-color: rgba(140, 122, 230, 0.1);
+}
+
+@media only screen and (max-width: 1200px) {
+  .attendance-record-container .table-container {
+    width: 90%;
+  }
+  .attendance-record-container .export-button {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .attendance-record-container .selection {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .attendance-record-container .selection > div:nth-child(1) {
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
