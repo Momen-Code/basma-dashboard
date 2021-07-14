@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
-// import useLogin from "./hooks";
+
+import useLogin from "./hooks";
 
 //Styles
 import "./style.scss";
@@ -10,7 +11,7 @@ import "./style.scss";
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 
 const Login = () => {
-  // const { login } = useLogin();
+  const { login } = useLogin();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -26,7 +27,12 @@ const Login = () => {
           <div className="logo-container">
             <Logo />
           </div>
-          <form>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              login({username: username, password: password});
+            }}
+          >
             <div className="username-container">
               <input
                 type="text"
@@ -44,7 +50,7 @@ const Login = () => {
               />
             </div>
             <div className="button-container">
-              <Link to="/attendance-record">تسجيل الدخول</Link>
+              <button type="submit">تسجيل الدخول</button>
             </div>
           </form>
         </div>

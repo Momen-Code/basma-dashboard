@@ -1,29 +1,42 @@
-import React from 'react'
+import React from "react";
 import {
   BrowserRouter as Router,
   Redirect,
   Route,
   Switch,
 } from "react-router-dom";
-import {Navbar} from './components';
+import { Loader, Navbar } from "./components";
+import { useAuthContext } from "./Providers";
 
-import {AttendanceRecord, Employees, Login, Settings} from './router'
-
+import { AttendanceRecord, Employees, Login, Settings } from "./router";
 
 function App() {
+  const { isLoggedIn } = useAuthContext();
+
   return (
     <div className="app-container">
+      <Loader />
       <Router>
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <div>
+        {isLoggedIn ? (
+          <>
             <Navbar />
-          <Route exact path="/attendance-record" component={AttendanceRecord} />
-          <Route exact path="/employees" component={Employees} />
-          <Route exact path="/settings" component={Settings} />
-
-          </div>
-        </Switch>
+            <Switch>
+              <Route
+                exact
+                path="/attendance-record"
+                component={AttendanceRecord}
+              />
+              <Route exact path="/employees" component={Employees} />
+              <Route exact path="/settings" component={Settings} />
+              <Redirect to="/attendance-record" />
+            </Switch>
+          </>
+        ) : (
+          <Switch>
+            <Route exact path="/login" component={Login} />
+            <Redirect to="/login" />
+          </Switch>
+        )}
       </Router>
     </div>
   );

@@ -5,7 +5,7 @@ const useLogin = () => {
   const { createNotification, setIsLoading } = useAppContext();
   const { setIsLoggedIn } = useAuthContext();
 
-  const login = async (username, password) => {
+  const login = async ({username, password}) => {
     try {
       setIsLoading(true);
       if (!username) {
@@ -15,9 +15,12 @@ const useLogin = () => {
         return createNotification("يجب كتابة كلمة المرور", "warning");
       }
 
+
+
       let response = await axios.post("/api/auth/login", {
         username,
         password,
+        type: "admin"
       });
 
 
