@@ -1,11 +1,10 @@
 const express = require("express");
 const router = express.Router();
-
-
+const { checkToken } = require("../middlewares/jwt");
 
 router.use("/auth", require("./auth"));
-router.use("/settings", require("./settings"));
-router.use("/history", require("./history"));
-router.use("/employees", require("./employees"));
+router.use("/settings", checkToken, require("./settings"));
+router.use("/history", checkToken, require("./history"));
+router.use("/employees", checkToken, require("./employees"));
 
 module.exports = router;
