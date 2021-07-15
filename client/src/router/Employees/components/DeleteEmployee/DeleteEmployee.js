@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { useOnClickOutside } from "../../hooks";
+import { useOnClickOutside } from "../../../../hooks";
 
 //Styles
 import "./style.scss";

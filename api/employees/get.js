@@ -11,7 +11,14 @@ router.post("/", async (req, res) => {
         message: "ليس لديك صلاحية الاطلاع علي هذه البيانات",
       });
 
-    const employees = await EmployeeModel.find({});
+    //Filters
+    const { department, employeeId, paginationToken, limit = 10 } = req.body;
+
+    const employees = await EmployeeModel.find({
+      ...(department && { department: { $regex: ".*" + department + ".*" } }),
+      ...(employeeId && { employeeId: { $regex: ".*" + employeeId + ".*" } }),
+      ...(paginationToken && { _id: { $gt: paginationToken } }),
+    }).limit(limit);
 
     if (employees.length == 0)
       return res.json({ status: false, message: "لا يوجد موظفين حاليا" });
