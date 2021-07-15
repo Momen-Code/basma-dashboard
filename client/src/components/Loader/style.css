@@ -53,7 +53,7 @@ input::-webkit-inner-spin-button {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(149, 165, 166, 0.9);
+  background-color: rgba(220, 221, 225, 0.9);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

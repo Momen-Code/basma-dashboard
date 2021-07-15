@@ -1,6 +1,7 @@
 import React from "react";
 import { MdEdit, MdDelete } from "react-icons/md";
-
+import dayjs from "dayjs";
+import "dayjs/locale/ar";
 //Styles
 import "./style.scss";
 
@@ -22,7 +23,7 @@ const TableRow = ({
       <td>{name}</td>
       <td>{employeeId}</td>
       <td>{department}</td>
-      <td className="time">{createTime}</td>
+      <td className="time">{dayjs(createTime).locale("ar").format("LLLL")}</td>
       <td className="actions">
         <span className="edit" onClick={() => onEdit(_id)}>
           <div>

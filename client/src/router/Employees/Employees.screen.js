@@ -5,6 +5,8 @@ import { useInfiniteQuery } from "react-query";
 import InfinitScroll from "react-infinite-scroll-component";
 import PropagateLoader from "react-spinners/PropagateLoader";
 
+import { GoPlusSmall } from "react-icons/go";
+
 //Styles
 import "./style.scss";
 
@@ -18,7 +20,8 @@ const Employees = () => {
     employeeId: "",
   });
   const [activeEmployee, setActiveEmployee] = useState({});
-
+  const [visible, setVisible] = useState(false);
+  const [boxType, setBoxType] = useState("");
   const { isLoading, isFetching, data, fetchNextPage, hasNextPage, refetch } =
     useInfiniteQuery(
       "employees",
@@ -30,14 +33,28 @@ const Employees = () => {
       }
     );
 
-  useEffect(() => {
-    refetch();
-  }, [searchObject]);
+  // useEffect(() => {
+  //   refetch();
+  // }, [searchObject]);
   const employees = data?.pages.reduce((acc, curr) => [...acc, ...curr]);
 
   return (
-    <div className="attendance-record-container">
+    <div className="employees-container">
       <h2>الموظفين</h2>
+      <div
+        className="add-employee-button"
+        onClick={() => {
+          setBoxType("add");
+          setVisible(true);
+        }}
+      >
+        <button>
+          <div>إضافة موظف</div>
+          <div>
+            <GoPlusSmall />
+          </div>
+        </button>
+      </div>
       <div className="selection">
         <div className="search-item">
           <div>
@@ -50,7 +67,6 @@ const Employees = () => {
             onChange={(e) =>
               setSearchObject({ ...searchObject, department: e.target.value })
             }
-            disabled={isLoading || isFetching}
           />
         </div>
         <div className="search-item">
@@ -64,9 +80,11 @@ const Employees = () => {
             onChange={(e) =>
               setSearchObject({ ...searchObject, employeeId: e.target.value })
             }
-            disabled={isLoading || isFetching}
           />
         </div>
+      </div>
+      <div className="search-button" onClick={() => refetch()}>
+        <button>بحث</button>
       </div>
       {isLoading || isFetching ? (
         <div className="loading-container">
@@ -104,16 +122,20 @@ const Employees = () => {
                     <TableRow
                       index={index}
                       {...item}
-                      onEdit={(_id) =>
+                      onEdit={(_id) => {
                         setActiveEmployee(
-                          employees.find((item) => item._id == _id)
-                        )
-                      }
-                      onDelete={(_id) =>
+                          employees.find((item) => _id == item._id)
+                        );
+                        setBoxType("edit");
+                        setVisible(true);
+                      }}
+                      onDelete={(_id) => {
                         setActiveEmployee(
-                          data.pages.find((item) => item._id == _id)
-                        )
-                      }
+                          employees.find((item) => _id == item._id)
+                        );
+                        setBoxType("delete");
+                        setVisible(true);
+                      }}
                     />
                   ))}
               </tbody>
@@ -121,17 +143,29 @@ const Employees = () => {
           </div>
         </InfinitScroll>
       )}
-      {/* <EditEmployee
-        visible={visible}
-        setVisible={setVisible}
-        employeeNumber={activeEmployee.employeeNumber}
-      />
-      <AddEmployee visible={visible} setVisible={setVisible} />
-      <DeleteEmployee
-        visible={visible}
-        setVisible={setVisible}
-        name={activeEmployee.employeeNumber}
-      /> */}
+
+      {boxType == "delete" ? (
+        <DeleteEmployee
+          visible={visible}
+          setVisible={setVisible}
+          activeEmployee={activeEmployee}
+          onDelete={refetch}
+        />
+      ) : boxType == "edit" ? (
+        <EditEmployee
+          visible={visible}
+          setVisible={setVisible}
+          setActiveEmployee={setActiveEmployee}
+          activeEmployee={activeEmployee}
+          onEdit={refetch}
+        />
+      ) : (
+        <AddEmployee
+          visible={visible}
+          setVisible={setVisible}
+          onAdd={refetch}
+        />
+      )}
     </div>
   );
 };
