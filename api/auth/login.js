@@ -8,8 +8,9 @@ router.post("/", async (req, res) => {
   try {
     const { username, password, employeeId, type } = req.body;
 
+    
     //Validation
-    if (!type || ["admin", "employee"].includes(type))
+    if (!type || !["admin", "employee"].includes(type))
       return res.json({
         status: false,
         message: "يجب تحديد نوع المستخدم ، يرجي التواصل مع المطور",

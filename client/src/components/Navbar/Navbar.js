@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useOnClickOutside } from "../../hooks";
 
+import { useAuthContext } from "../../Providers";
 
 // import { useAuthContext } from "../../Providers";
 
@@ -13,7 +14,7 @@ import "./style.scss";
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 
 const Navbar = () => {
-  // const { setIsLoggedIn } = useAuthContext();
+  const { setIsLoggedIn } = useAuthContext();
 
   const [visible, setVisible] = useState(false);
   const sideMenuRef = useRef(null);
@@ -35,7 +36,7 @@ const Navbar = () => {
           <Link to="/attendance-record">السجل</Link>
           <Link to="/employees">الموظفين</Link>
           <Link to="/settings">الاعدادات</Link>
-          <button >تسجيل الخروج</button>
+          <button onClick={()=>setIsLoggedIn(false)}>تسجيل الخروج</button>
         </div>
       </div>
     </div>
