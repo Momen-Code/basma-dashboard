@@ -8,7 +8,6 @@ router.post("/", async (req, res) => {
   try {
     const { username, password, employeeId, type } = req.body;
 
-    
     //Validation
     if (!type || !["admin", "employee"].includes(type))
       return res.json({

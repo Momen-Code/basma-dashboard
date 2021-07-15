@@ -47,13 +47,113 @@ input::-webkit-inner-spin-button {
 /********************************************************/
 /******************************/
 /******************************/
-.attendance-record-container h2 {
+.employees-container h2 {
   text-align: center;
   font-weight: bold;
   font-size: 35px;
 }
 
-.attendance-record-container .selection {
+.employees-container .add-employee-button {
+  margin: 20px auto;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.employees-container .add-employee-button button {
+  border: none;
+  outline: none;
+  padding: 6px 30px;
+  background-color: #8c7ae6;
+  color: #ffffff;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.employees-container .add-employee-button button > div {
+  margin-left: 5px;
+}
+
+.employees-container .add-employee-button button:hover {
+  background-color: purple;
+}
+
+.employees-container .add-employee-button button:active {
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.employees-container .add-employee-button button svg {
+  font-weight: bold;
+  vertical-align: middle;
+  font-size: 30px;
+}
+
+.employees-container .search-button {
+  margin: 20px auto;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.employees-container .search-button button {
+  border: none;
+  outline: none;
+  padding: 6px 30px;
+  background-color: #8c7ae6;
+  color: #ffffff;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.employees-container .search-button button:hover {
+  background-color: purple;
+}
+
+.employees-container .search-button button:active {
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.employees-container .selection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,7 +167,7 @@ input::-webkit-inner-spin-button {
   margin: 30px 0;
 }
 
-.attendance-record-container .selection > div:nth-child(1) {
+.employees-container .selection > div:nth-child(1) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,54 +180,13 @@ input::-webkit-inner-spin-button {
   text-align: center;
 }
 
-.attendance-record-container .selection label {
+.employees-container .selection label {
   display: inline-block;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
-.attendance-record-container .selection .select-item {
-  margin-left: 40px;
-  position: relative;
-}
-
-.attendance-record-container .selection .select-item select {
-  background-color: #8c7ae6;
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
-  border-radius: 30px;
-  padding: 5px 60px;
-  text-align-last: center;
-  color: #ffffff;
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  -webkit-appearance: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.attendance-record-container .selection .select-item span {
-  position: absolute;
-  left: 10%;
-  top: 80%;
-  display: block;
-  -webkit-transform: translateY(-5px) rotate(0deg);
-          transform: translateY(-5px) rotate(0deg);
-  border: 4px solid transparent;
-  border-top: 7px solid #ffffff;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-  -webkit-transform-origin: 6px 4px;
-          transform-origin: 6px 4px;
-}
-
-.attendance-record-container .selection .search-item {
-  margin-left: 40px;
-}
-
-.attendance-record-container .selection .search-item input {
+.employees-container .selection .search-item input {
   background-color: #efefef;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
@@ -142,71 +201,66 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
 }
 
-.attendance-record-container .selection .search-item input::-webkit-input-placeholder {
+.employees-container .selection .search-item input::-webkit-input-placeholder {
   font-weight: bold;
 }
 
-.attendance-record-container .selection .search-item input:-ms-input-placeholder {
+.employees-container .selection .search-item input:-ms-input-placeholder {
   font-weight: bold;
 }
 
-.attendance-record-container .selection .search-item input::-ms-input-placeholder {
+.employees-container .selection .search-item input::-ms-input-placeholder {
   font-weight: bold;
 }
 
-.attendance-record-container .selection .search-item input::placeholder {
+.employees-container .selection .search-item input::placeholder {
   font-weight: bold;
 }
 
-.attendance-record-container .selection .date-picker-container {
-  margin-left: 40px;
+.employees-container .loading-container {
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.attendance-record-container .selection .date-picker-container .picker {
-  margin-top: 0 !important;
-}
-
-.attendance-record-container .selection .date-picker-container .picker div {
-  margin: 0;
-}
-
-.attendance-record-container .selection .date-picker-container .picker input {
-  background-color: #8c7ae6;
-  border-radius: 30px;
-  color: #ffffff;
-  font-size: 14px;
-  text-align: center;
-  padding: 5px 10px;
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
-  font-weight: bold;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-.attendance-record-container .table-container {
+.employees-container .table-container {
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   overflow-x: auto;
+  overflow-y: auto;
   margin: 50px 20px;
   border-radius: 15px;
-  width: 70%;
-  margin: auto;
+  width: 1000px;
+  max-width: 95%;
+  margin: 0px auto 20px;
+  max-height: 650px;
 }
 
-.attendance-record-container .table-container table {
+.employees-container .table-container::-webkit-scrollbar {
+  width: 0px;
+  height: 6px;
+}
+
+.employees-container .table-container table {
   border-collapse: collapse;
   width: 100%;
   min-width: 700px;
+  position: relative;
 }
 
-.attendance-record-container .table-container table thead {
+.employees-container .table-container table thead th {
   background-color: #8c7ae6;
-}
-
-.attendance-record-container .table-container table thead th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
   padding: 5px;
   font-size: 16px;
   font-weight: bold;
@@ -215,18 +269,18 @@ input::-webkit-inner-spin-button {
   text-align: right;
 }
 
-.attendance-record-container .table-container table thead th:nth-child(1) {
+.employees-container .table-container table thead th:nth-child(1) {
   text-align: center;
 }
 
-.attendance-record-container .table-container table tbody tr td {
+.employees-container .table-container table tbody tr td {
   padding: 12px 0px;
   padding-left: 25px;
   font-weight: bold;
   font-size: 16px;
 }
 
-.attendance-record-container .table-container table tbody tr td:nth-child(1) {
+.employees-container .table-container table tbody tr td:nth-child(1) {
   text-align: right;
   direction: rtl;
   text-align: center;
@@ -234,20 +288,20 @@ input::-webkit-inner-spin-button {
   padding: 0 10px;
 }
 
-.attendance-record-container .table-container table tbody tr .time {
+.employees-container .table-container table tbody tr .time {
   direction: ltr;
   text-align: end;
   padding-left: 0;
 }
 
-.attendance-record-container .table-container table tbody tr .actions {
+.employees-container .table-container table tbody tr .actions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding-left: 0;
 }
 
-.attendance-record-container .table-container table tbody tr .actions span {
+.employees-container .table-container table tbody tr .actions span {
   margin-left: 20px;
   padding: 2px 7px;
   border-radius: 8px;
@@ -265,41 +319,41 @@ input::-webkit-inner-spin-button {
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
-.attendance-record-container .table-container table tbody tr .actions span svg {
+.employees-container .table-container table tbody tr .actions span svg {
   vertical-align: middle;
   color: #ffffff;
   font-size: 18px;
 }
 
-.attendance-record-container .table-container table tbody tr .actions .edit {
+.employees-container .table-container table tbody tr .actions .edit {
   background-color: #8c7ae6;
 }
 
-.attendance-record-container .table-container table tbody tr .actions .delete {
+.employees-container .table-container table tbody tr .actions .delete {
   background-color: #f14646;
 }
 
-.attendance-record-container .table-container table tbody tr:nth-child(odd) {
+.employees-container .table-container table tbody tr:nth-child(odd) {
   background-color: rgba(140, 122, 230, 0.1);
 }
 
 @media only screen and (max-width: 1200px) {
-  .attendance-record-container .table-container {
+  .employees-container .table-container {
     width: 90%;
   }
-  .attendance-record-container .export-button {
+  .employees-container .export-button {
     width: 90%;
   }
 }
 
 @media only screen and (max-width: 320px) {
-  .attendance-record-container .selection {
+  .employees-container .selection {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .attendance-record-container .selection > div:nth-child(1) {
+  .employees-container .selection > div:nth-child(1) {
     margin-left: 0px;
     margin-bottom: 10px;
   }

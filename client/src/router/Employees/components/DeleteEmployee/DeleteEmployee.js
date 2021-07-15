@@ -1,13 +1,14 @@
 import React, { useState, useRef } from "react";
 import { useOnClickOutside } from "../../../../hooks";
+import useEmployees from "../../hooks";
 
 //Styles
 import "./style.scss";
 
-const AddEmployee = ({ name, visible, setVisible }) => {
+const AddEmployee = ({ visible, setVisible, activeEmployee, onDelete }) => {
   const deleteBoxRef = useRef(null);
   useOnClickOutside(deleteBoxRef, () => setVisible(false));
-
+  const { deleteEmployee } = useEmployees();
   return (
     visible && (
       <div className="add-employee-container">
@@ -17,13 +18,26 @@ const AddEmployee = ({ name, visible, setVisible }) => {
             <span></span>
           </div>
           <h3>حذف الموظف</h3>
-          <h1>{name}</h1>
+          <h1>{activeEmployee.name}</h1>
           <div className="action">
-            <div class="confirm">
-              <button type="submit">حذف</button>
+            <div className="confirm">
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log(activeEmployee._id);
+                  deleteEmployee({ _id: activeEmployee._id });
+                  setVisible(false);
+                  onDelete();
+                }}
+              >
+                حذف
+              </button>
             </div>
-            <div class="cancel">
-              <button type="submit">إلغاء</button>
+            <div className="cancel">
+              <button type="button" onClick={() => setVisible(false)}>
+                إلغاء
+              </button>
             </div>
           </div>
         </div>
