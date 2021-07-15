@@ -8,29 +8,28 @@ import "./style.scss";
 
 const TableRow = ({
   index,
-  // employee,
-  // jobNumber,
-  // administration,
-  // attendance,
-  // time,
+  _id,
+  name,
+  employeeId,
+  department,
+  createTime,
   onEdit,
+  onDelete,
 }) => {
   return (
     <tr>
       <td>{index + 1}</td>
-      <td>momen</td>
-      <td>532121</td>
-      <td>515562</td>
-      <td class="time">2:00 pm 8/7/2021</td>
+      <td>{name}</td>
+      <td>{employeeId}</td>
+      <td>{department}</td>
+      <td className="time">{createTime}</td>
       <td className="actions">
-        <span className="edit" 
-        // onClick={()=>onEdit(employee.id)}
-        >
+        <span className="edit" onClick={() => onEdit(_id)}>
           <div>
             <MdEdit />
           </div>
         </span>
-        <span className="delete">
+        <span className="delete" onClick={() => onDelete(_id)}>
           <div>
             <MdDelete />
           </div>

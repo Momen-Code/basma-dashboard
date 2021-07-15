@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const cors = require("cors");
+const cookeiParser = require("cookie-parser");
 const PORT = process.env.PORT || 5000;
 
 //Init
@@ -9,6 +10,7 @@ require("./init");
 
 //Middlewares
 app.use(cors());
+app.use(cookeiParser());
 app.use(express.json());
 
 //API
