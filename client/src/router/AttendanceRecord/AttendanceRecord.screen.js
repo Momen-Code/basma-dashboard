@@ -15,7 +15,6 @@ import useAttendanceRecord from "./hooks";
 const AttendanceRecord = () => {
   const { getData } = useAttendanceRecord();
   const [searchObject, setSearchObject] = useState({
-    _id: "",
     department: "",
     day: "",
     employeeId: "",
@@ -37,23 +36,18 @@ const AttendanceRecord = () => {
   const history = data?.pages.reduce((acc, curr) => [...acc, ...curr]);
 
   useEffect(() => {
-    if (history && employees.length == 0) {
-      history.map((item) => {
-        setEmployees([item.employee, ...employees]);
-      });
-      console.log(employees);
-      var resArr = [];
-      employees.forEach(function (item) {
-        var i = resArr.findIndex((x) => x.name == item.name);
-        console.log("item", item)
-        if (i <= -1) {
-          resArr.push({ id: item.id, name: item.name });
-        }
-      });
-      console.log("resArr", resArr);
-      setEmployees(resArr);
-    }
+    getEmployees();
   }, [history]);
+
+  const getEmployees = () => {
+    //Get unique employees
+    if (history && employees.length == 0) {
+      const employeesArray = [
+        ...new Map(history.map((item) => [item.employee._id, item])).values(),
+      ].map((item) => item.employee);
+      setEmployees(employeesArray);
+    }
+  };
   return (
     <div className="attendance-record-container">
       <h2>سجل الحضور والانصراف</h2>
@@ -64,13 +58,13 @@ const AttendanceRecord = () => {
           </div>
           <select
             onChange={async (e) => {
-              setSearchObject({ ...searchObject, _id: e.target.value });
+              setSearchObject({ ...searchObject, employeeId: e.target.value });
             }}
           >
             <option value="">الكل</option>
             {employees &&
               employees.map((item, index) => (
-                <option value={item._id}>{item.name}</option>
+                <option value={item.employeeId}>{item.name}</option>
               ))}
           </select>
           <span></span>
@@ -117,7 +111,14 @@ const AttendanceRecord = () => {
         </div>
       </div>
       <div className="search-button">
-        <button onClick={() => refetch()}>بحث</button>
+        <button
+          onClick={() => {
+            refetch();
+            getEmployees();
+          }}
+        >
+          بحث
+        </button>
       </div>
       {isLoading || isFetching ? (
         <div className="loading-container">
