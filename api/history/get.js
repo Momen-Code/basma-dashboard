@@ -12,10 +12,6 @@ router.post("/", async (req, res) => {
       });
 
     const {
-<<<<<<< HEAD
-      _id,
-=======
->>>>>>> c1819e8f08e42eafa432110907ca0e62fa53d276
       employeeId,
       department,
       day,
@@ -23,17 +19,8 @@ router.post("/", async (req, res) => {
       limit = 10,
     } = req.body;
 
-<<<<<<< HEAD
-    console.log(req.body);
-
-    let history = await HistoryModel.find({
-      ...(_id && { _id }),
-      ...(day && { day: { $regex: ".*" + day + ".*" } }),
-
-=======
     let history = await HistoryModel.find({
       ...(day && { day: { $regex: ".*" + day + ".*" } }),
->>>>>>> c1819e8f08e42eafa432110907ca0e62fa53d276
       ...(paginationToken && { _id: { $gt: paginationToken } }),
     }).populate({
       path: "employee",
@@ -47,12 +34,7 @@ router.post("/", async (req, res) => {
       },
     });
 
-<<<<<<< HEAD
-    history = history.filter((item) => item.employee);
-    console.log("testing ", history);
-=======
     history = history.filter((item) => item.employee).slice(0, limit);
->>>>>>> c1819e8f08e42eafa432110907ca0e62fa53d276
 
     if (history.length == 0)
       return res.json({
