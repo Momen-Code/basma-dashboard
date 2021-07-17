@@ -55,7 +55,7 @@ const AddEmployee = ({ visible, setVisible,onAdd }) => {
             <div className="joNumber">
               <input
                 type="text"
-                placeholder="الرقم الوظيفيس"
+                placeholder="الرقم الوظيفي"
                 value={employeeData.employeeId}
                 onChange={(e) =>
                   setEmployeeData({
