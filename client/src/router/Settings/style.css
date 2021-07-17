@@ -58,6 +58,11 @@ input::-webkit-inner-spin-button {
   margin: 25px auto;
 }
 
+.settings-container .container span {
+  color: #dcdde1;
+  font-size: 16px;
+}
+
 .settings-container .container .map-container {
   background-color: #dcdde1;
   border-radius: 15px;
@@ -66,5 +71,14 @@ input::-webkit-inner-spin-button {
   text-align: center;
   margin-top: 30px;
   overflow: hidden;
+}
+
+.settings-container .container .map-container .mark-img {
+  width: 50px;
+  height: 40px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transform: translate(50%, -100%);
+          transform: translate(50%, -100%);
 }
 /*# sourceMappingURL=style.css.map */
