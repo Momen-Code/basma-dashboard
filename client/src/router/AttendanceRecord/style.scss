@@ -24,8 +24,8 @@
       margin-bottom: 10px;
       font-weight: 600;
     }
+  
     .select-item {
-      margin-left: 40px;
       position: relative;
       select {
         background-color: $purple-primary;
@@ -55,7 +55,6 @@
       }
     }
     .search-item {
-      margin-left: 40px;
       input {
         background-color: #EFEFEF;
         box-shadow: 0px 3px 6px rgba($black, 0.3);
@@ -95,6 +94,35 @@
           outline: none;
           cursor: pointer;
         }
+      }
+    }
+  }
+  .search-button {
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    button {
+      border: none;
+      outline: none;
+      padding: 6px 30px;
+      background-color: $purple-primary;
+      color: $white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 3px 6px rgba($black, 0.3);
+
+      &:hover {
+        background-color: purple;
+      }
+      &:active {
+        transition: none;
+        transform: scale(0.95);
       }
     }
   }

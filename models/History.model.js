@@ -8,6 +8,7 @@ const HistorySchema = new mongoose.Schema({
     type: String,
     enum: ["attending", "leaving"]
   },
+  day: String,
   createTime: {
     type: Date,
     default: Date.now()

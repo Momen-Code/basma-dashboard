@@ -87,7 +87,6 @@ input::-webkit-inner-spin-button {
 }
 
 .attendance-record-container .selection .select-item {
-  margin-left: 40px;
   position: relative;
 }
 
@@ -121,10 +120,6 @@ input::-webkit-inner-spin-button {
   transition: 0.3s ease;
   -webkit-transform-origin: 6px 4px;
           transform-origin: 6px 4px;
-}
-
-.attendance-record-container .selection .search-item {
-  margin-left: 40px;
 }
 
 .attendance-record-container .selection .search-item input {
@@ -183,6 +178,51 @@ input::-webkit-inner-spin-button {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.attendance-record-container .search-button {
+  margin: 20px auto;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.attendance-record-container .search-button button {
+  border: none;
+  outline: none;
+  padding: 6px 30px;
+  background-color: #8c7ae6;
+  color: #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.attendance-record-container .search-button button:hover {
+  background-color: purple;
+}
+
+.attendance-record-container .search-button button:active {
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 .attendance-record-container .table-container {

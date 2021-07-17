@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { createToken } = require("../../middlewares/jwt");
 const UserModel = require("../../models/User.model");
-const EmployeeModel = require("../../models/User.model");
+const EmployeeModel = require("../../models/Employee.model");
 
 router.post("/", async (req, res) => {
   try {
@@ -28,6 +28,7 @@ router.post("/", async (req, res) => {
       userSearch = userSearch && userSearch.toObject();
     } else if (type == "employee") {
       userSearch = await EmployeeModel.findOne({ employeeId });
+      console.log(employeeId, userSearch)
       userSearch = userSearch && userSearch.toObject();
     }
 

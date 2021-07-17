@@ -33,9 +33,7 @@ const Employees = () => {
       }
     );
 
-  // useEffect(() => {
-  //   refetch();
-  // }, [searchObject]);
+
   const employees = data?.pages.reduce((acc, curr) => [...acc, ...curr]);
 
   return (
@@ -83,8 +81,9 @@ const Employees = () => {
           />
         </div>
       </div>
-      <div className="search-button" onClick={() => refetch()}>
-        <button>بحث</button>
+
+      <div className="search-button" >
+        <button onClick={() => refetch()}>بحث</button>
       </div>
       {isLoading || isFetching ? (
         <div className="loading-container">

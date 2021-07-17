@@ -70,7 +70,9 @@ input::-webkit-inner-spin-button {
   padding: 6px 30px;
   background-color: #8c7ae6;
   color: #ffffff;
-  border-radius: 50px;
+
+  border-radius: 10px;
+
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -125,7 +127,9 @@ input::-webkit-inner-spin-button {
   padding: 6px 30px;
   background-color: #8c7ae6;
   color: #ffffff;
-  border-radius: 50px;
+
+  border-radius: 10px;
+
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;

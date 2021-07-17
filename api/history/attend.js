@@ -1,20 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const HistoryModel = require("../../models/History.model");
-
-//  //Get the day string --> mm-dd-yyyy
-//  const date = new Date();
-//  const day = [
-//    date.getDate() < 10 ? `0${date.getDate()}` : date.getDate(),
-//    date.getMonth() + 1 < 10
-//      ? `0${date.getMonth() + 1}`
-//      : date.getMonth() + 1,
-//    date.getFullYear(),
-//  ].join("-");
+const mongoose = require("mongoose");
 
 router.post("/", async (req, res) => {
   try {
     //Check roles
+    console.log(req.user)
     if (req.user.role != "employee")
       return res.json({
         status: false,
@@ -24,15 +16,26 @@ router.post("/", async (req, res) => {
     const { type } = req.body;
 
     //Validation
-    if (!type || ["attending", "leaving"].includes(type))
+    if (!type || !["attending", "leaving"].includes(type))
       return res.json({
         status: false,
         message: "يجب تحديد نوع العملية سواء حضور أو انصراف",
       });
 
+    //Get the day string --> mm-dd-yyyy
+    const date = new Date();
+    const day = [
+      date.getDate() < 10 ? `0${date.getDate()}` : date.getDate(),
+      date.getMonth() + 1 < 10
+        ? `0${date.getMonth() + 1}`
+        : date.getMonth() + 1,
+      date.getFullYear(),
+    ].join("-");
+
     const savedHistory = await HistoryModel.create({
-      employee: req.user._id,
+      employee: mongoose.Types.ObjectId(req.user._id),
       type,
+      day,
     });
 
     if (savedHistory.length == 0)

@@ -39,6 +39,7 @@ module.exports = {
         searchUser = await EmployeeModel.findOne({ _id: user._id });
 
       if (searchUser) {
+        searchUser = searchUser.toObject();
         req.user = { ...searchUser, role: user.role };
         return next();
       } else {

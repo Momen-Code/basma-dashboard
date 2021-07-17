@@ -6,6 +6,7 @@ import {
   Switch,
 } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
+import {ReactQueryDevtools }from 'react-query/devtools';
 import { Loader, Navbar } from "./components";
 import { useAuthContext } from "./Providers";
 
@@ -49,6 +50,7 @@ function App() {
           )}
         </Router>
       </div>
+      <ReactQueryDevtools initialIsOpen={true} />
     </QueryClientProvider>
   );
 }
