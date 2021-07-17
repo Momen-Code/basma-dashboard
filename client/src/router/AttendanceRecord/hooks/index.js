@@ -6,15 +6,12 @@ const useAttendanceRecord = () => {
 
   const getData = async ({ paginationToken = "", ...searchObject }) => {
     try {
-      console.log(searchObject);
       let response = await axios.post("/api/history/get", {
         paginationToken,
         limit: 10,
         ...searchObject,
       });
       let data = await response.data;
-
-      console.log(data);
 
       if (!data.status) {
         createNotification(data.message, "error");
