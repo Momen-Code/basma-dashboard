@@ -10,13 +10,12 @@ const useSettings = () => {
       let response = await axios.post("/api/settings/get");
 
       let data = await response.data;
-      
-      console.log(data.data.settings.location.coordinates);
 
+      console.log(data.data.settings.location.coordinates);
 
       if (!data.status) {
         createNotification(data.message, "error");
-        return {};
+        return [];
       }
       return data.data.settings.location.coordinates;
     } catch (e) {
@@ -28,7 +27,6 @@ const useSettings = () => {
   };
   const updateSettings = async ({ lat, lng }) => {
     try {
-      setIsLoading(true);
       if (!lat) {
         return createNotification(
           "يجب التاكد من ارسال البيانات المطلوبة ",
@@ -47,12 +45,9 @@ const useSettings = () => {
         lng,
       });
 
-      console.log(response);
-
       let data = await response.data;
 
-      console.log(data.message);
-      console.log(data.status);
+      console.log(data);
 
       if (!data.status) {
         createNotification(data.message, "error");
@@ -64,9 +59,8 @@ const useSettings = () => {
       return data.data;
     } catch (e) {
       alert(e.message);
-    } finally {
-      setIsLoading(false);
-    }
+    } 
+    
   };
 
   return { updateSettings, getSettings };

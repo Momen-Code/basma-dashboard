@@ -89,8 +89,7 @@ const AttendanceRecord = () => {
           <DatePicker
             initialDate={new Date().getTime()}
             onChange={async (value) => {
-              console.log(value);
-              setSearchObject({ ...searchObject, day: value });
+              setSearchObject({ ...searchObject, day: formatDate(value) });
             }}
             dateFormat="DD-MM-YYYY"
             value={searchObject.day}

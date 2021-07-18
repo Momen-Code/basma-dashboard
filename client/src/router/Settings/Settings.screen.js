@@ -10,11 +10,11 @@ import LocationMark from "../../assets/images/location-mark.svg";
 //hooks
 import useSettings from "./hooks";
 
-const Settings = ({ lat = 39.252349, lng = 21.476755 }) => {
+const Settings = () => {
   const { getSettings, updateSettings } = useSettings();
   const [settingsData, setSettingsData] = useState({
-    lat: 0,
-    lng: 0,
+    lng: 39.252349,
+    lat: 21.476755,
   });
 
   useEffect(() => {
@@ -37,13 +37,21 @@ const Settings = ({ lat = 39.252349, lng = 21.476755 }) => {
               key: "AIzaSyDUZp6H0YLdfkwOA7EZwEv6ndNAkjleN9w",
             }}
             defaultCenter={{
-              lat,
-              lng,
+              lat: settingsData.lat,
+              lng: settingsData.lng,
             }}
             defaultZoom={16}
-            onClick={(ev) => updateSettings({ lat: ev.lat, lng: ev.lng })}
+            onClick={(ev) => {
+              setSettingsData({ lat: ev.lat, lng: ev.lng });
+              updateSettings({ lat: ev.lat, lng: ev.lng });
+            }}
           >
-            <img src={LocationMark} lat={lat} lng={lng} className="mark-img" />
+            <img
+              src={LocationMark}
+              lat={settingsData.lat}
+              lng={settingsData.lng}
+              className="mark-img"
+            />
           </GoogleMapReact>
         </div>
       </div>
