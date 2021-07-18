@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
 
     return res.json({
       status: true,
-      message: "تم استرجاع البيانات بنجاح",
+      message: "تم تحديث الموقع",
       data: { settings: newSettings },
     });
   } catch (e) {
