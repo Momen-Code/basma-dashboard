@@ -71,11 +71,24 @@ const AttendanceRecord = () => {
         </div>
         <div className="search-item">
           <div>
-            <label>اختر الادارة</label>
+            <label>ابحث برقم الموظف</label>
           </div>
           <input
             type="text"
-            placeholder="اختر الادارة"
+            placeholder="#"
+            value={searchObject.employeeId}
+            onChange={(e) =>
+              setSearchObject({ ...searchObject, employeeId: e.target.value })
+            }
+          />
+        </div>
+        <div className="search-item">
+          <div>
+            <label>ابحث بالادارة</label>
+          </div>
+          <input
+            type="text"
+            placeholder="ابحث بالادارة"
             value={searchObject.department}
             onChange={(e) =>
               setSearchObject({ ...searchObject, department: e.target.value })
@@ -87,25 +100,11 @@ const AttendanceRecord = () => {
             <label>اختر اليوم</label>
           </div>
           <DatePicker
-            initialDate={new Date().getTime()}
             onChange={async (value) => {
               setSearchObject({ ...searchObject, day: formatDate(value) });
             }}
             dateFormat="DD-MM-YYYY"
             value={searchObject.day}
-          />
-        </div>
-        <div className="search-item">
-          <div>
-            <label>ابحث برقم الموظف</label>
-          </div>
-          <input
-            type="text"
-            placeholder="#"
-            value={searchObject.employeeId}
-            onChange={(e) =>
-              setSearchObject({ ...searchObject, employeeId: e.target.value })
-            }
           />
         </div>
       </div>

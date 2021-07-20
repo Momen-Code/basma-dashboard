@@ -11,13 +11,15 @@ const useSettings = () => {
 
       let data = await response.data;
 
-      console.log(data.data.settings.location.coordinates);
-
       if (!data.status) {
         createNotification(data.message, "error");
         return [];
       }
-      return data.data.settings.location.coordinates;
+      return {
+        ...data.data.settings,
+        lng: data.data.settings.location.coordinates[0],
+        lat: data.data.settings.location.coordinates[1],
+      };
     } catch (e) {
       alert(e.message);
       return {};
@@ -25,17 +27,28 @@ const useSettings = () => {
       setIsLoading(false);
     }
   };
-  const updateSettings = async ({ lat, lng }) => {
+  const updateSettings = async ({
+    lat,
+    lng,
+    allowedDistance,
+    attendanceTime,
+    allowedAttendanceTime,
+    leavingTime,
+    allowedLeavingTime,
+  }) => {
     try {
-      if (!lat) {
+      if (
+        !lat ||
+        !lng ||
+        !allowedDistance ||
+        !attendanceTime ||
+        !attendanceTime ||
+        !allowedAttendanceTime ||
+        !leavingTime ||
+        !allowedLeavingTime
+      ) {
         return createNotification(
-          "يجب التاكد من ارسال البيانات المطلوبة ",
-          "warning"
-        );
-      }
-      if (!lng) {
-        return createNotification(
-          "يجب التاكد من ارسال البيانات المطلوبة",
+          "يجب التأكد من ملء جميع الاعدادات",
           "warning"
         );
       }
@@ -43,6 +56,11 @@ const useSettings = () => {
       let response = await axios.post("/api/settings/update", {
         lat,
         lng,
+        allowedDistance,
+        attendanceTime,
+        allowedAttendanceTime,
+        leavingTime,
+        allowedLeavingTime,
       });
 
       let data = await response.data;
@@ -59,8 +77,7 @@ const useSettings = () => {
       return data.data;
     } catch (e) {
       alert(e.message);
-    } 
-    
+    }
   };
 
   return { updateSettings, getSettings };

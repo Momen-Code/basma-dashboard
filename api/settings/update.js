@@ -11,13 +11,26 @@ router.post("/", async (req, res) => {
         message: "ليس لديك صلاحية الاطلاع علي هذه البيانات",
       });
 
-    const { lat, lng } = req.body;
+    const {
+      lat,
+      lng,
+      allowedDistance,
+      attendanceTime,
+      allowedAttendanceTime,
+      leavingTime,
+      allowedLeavingTime,
+    } = req.body;
     if (!lat || !lng)
       return res.json({ status: false, message: "يجب تحديد الموقع" });
 
     await SettingsModel.updateOne({
       $set: {
         location: { coordinates: [lng, lat] },
+        ...(allowedDistance && { allowedDistance }),
+        ...(attendanceTime && { attendanceTime }),
+        ...(allowedAttendanceTime && { allowedAttendanceTime }),
+        ...(leavingTime && { leavingTime }),
+        ...(allowedLeavingTime && { allowedLeavingTime }),
       },
     });
 
@@ -25,11 +38,11 @@ router.post("/", async (req, res) => {
 
     return res.json({
       status: true,
-      message: "تم تحديث الموقع",
+      message: "تم تحديث الاعدادات بنجاح",
       data: { settings: newSettings },
     });
   } catch (e) {
-    console.log(`Error in /api/settings/get: ${e.message}`, e);
+    console.log(`Error in /api/settings/update: ${e.message}`, e);
 
     if (!res.headersSent) {
       res.json({

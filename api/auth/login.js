@@ -8,6 +8,7 @@ router.post("/", async (req, res) => {
   try {
     const { username, password, employeeId, type } = req.body;
 
+    console.log(req.body);
     //Validation
     if (!type || !["admin", "employee"].includes(type))
       return res.json({
@@ -28,7 +29,6 @@ router.post("/", async (req, res) => {
       userSearch = userSearch && userSearch.toObject();
     } else if (type == "employee") {
       userSearch = await EmployeeModel.findOne({ employeeId });
-      console.log(employeeId, userSearch)
       userSearch = userSearch && userSearch.toObject();
     }
 

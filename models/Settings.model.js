@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 const pointSchema = new mongoose.Schema({
   type: {
     type: String,
@@ -10,20 +9,21 @@ const pointSchema = new mongoose.Schema({
   },
   coordinates: {
     type: [Number],
-    required: true
-  }
-
+    required: true,
+  },
 });
-
 
 const SettingsSchema = new mongoose.Schema({
   location: {
     type: pointSchema,
     required: true,
-    index: "2dsphere"
- }
+    index: "2dsphere",
+  },
+  allowedDistance: Number, //meters
+  attendanceTime: Number, //hours
+  allowedAttendanceTime: Number, //hours
+  leavingTime: Number, //hours
+  allowedLeavingTime: Number, //hours
 });
-
-
 
 module.exports = mongoose.model("Settings", SettingsSchema, "settings");
