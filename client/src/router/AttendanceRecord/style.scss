@@ -74,7 +74,7 @@
       }
     }
     .date-picker-container {
-      margin-left: 40px;
+      margin: 0 40px;
 
       .picker {
         margin-top: 0 !important;
@@ -126,14 +126,26 @@
       }
     }
   }
+  .loading-container {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .table-container {
     box-shadow: 0px 3px 6px rgba($black, 0.3);
     overflow: hidden;
     overflow-x: auto;
     margin: 50px 20px;
     border-radius: 15px;
-    width: 70%;
-    margin: auto;
+    width: 1000px;
+    max-width: 95%;
+    margin: 0px auto 20px;
+    max-height: 650px;
+    &::-webkit-scrollbar {
+      width: 0px;
+      height: 6px;
+    }
     table {
       border-collapse: collapse;
       width: 100%;
@@ -178,8 +190,8 @@
           }
           .purpleBg{
             span{
-
               background-color: $purple-primary;
+              padding: 4px 39px;
             }
           
           }

@@ -19,6 +19,7 @@ router.post("/", async (req, res) => {
       limit = 10,
     } = req.body;
 
+
     let history = await HistoryModel.find({
       ...(day && { day: { $regex: ".*" + day + ".*" } }),
       ...(paginationToken && { _id: { $gt: paginationToken } }),
