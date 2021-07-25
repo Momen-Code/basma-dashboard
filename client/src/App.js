@@ -6,7 +6,7 @@ import {
   Switch,
 } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-import {ReactQueryDevtools }from 'react-query/devtools';
+import { ReactQueryDevtools } from "react-query/devtools";
 import { Loader, Navbar } from "./components";
 import { useAuthContext } from "./Providers";
 
@@ -16,6 +16,7 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
+      staleTime: 1000 * 60 * 5, //5mins
     },
   },
 });

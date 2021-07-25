@@ -24,9 +24,10 @@
       margin-bottom: 10px;
       font-weight: 600;
     }
-  
+
     .select-item {
       position: relative;
+
       select {
         background-color: $purple-primary;
         box-shadow: 0px 3px 6px rgba($black, 0.3);
@@ -55,9 +56,11 @@
       }
     }
     .search-item {
+      margin-left: 40px;
+
       input {
-        background-color: #EFEFEF;
-        box-shadow: 0px 3px 6px rgba($black, 0.3);
+        background-color: #efefef;
+        box-shadow: 0px 3px 6px rgba($black, 0.15);
         border-radius: 30px;
         padding: 5px 15px;
         text-align-last: center;
@@ -66,16 +69,12 @@
         border: none;
         outline: none;
         font-weight: bold;
-        cursor: pointer;
         &::placeholder {
-          
           font-weight: bold;
         }
       }
     }
     .date-picker-container {
-      margin: 0 40px;
-
       .picker {
         margin-top: 0 !important;
         div {
@@ -178,38 +177,34 @@
               padding: 0 10px;
             }
           }
-          .attendance{
+          .attendance {
             padding-left: 0;
             width: fit-content;
-            span{
+            span {
               color: $white;
               padding: 4px 35px;
               border-radius: 50px;
               font-size: 13px;
             }
           }
-          .purpleBg{
-            span{
+          .purpleBg {
+            span {
               background-color: $purple-primary;
               padding: 4px 39px;
             }
-          
           }
-          .blackBg{
-            span{
-
+          .blackBg {
+            span {
               background-color: $black;
             }
           }
           &:nth-child(odd) {
             background-color: rgba($purple-primary, 0.1);
           }
-
         }
       }
     }
   }
-
 
   @include media(desktop-lg) {
   }

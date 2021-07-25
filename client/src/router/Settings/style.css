@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200;400;600;700&display=swap");
 /*****************************************/
 body {
   margin: 0;
@@ -54,13 +54,16 @@ input::-webkit-inner-spin-button {
 }
 
 .settings-container .container {
-  width: 60%;
+  width: 1200px;
+  max-width: 95%;
   margin: 25px auto;
 }
 
 .settings-container .container span {
   color: #dcdde1;
   font-size: 16px;
+  -webkit-margin-start: 10px;
+          margin-inline-start: 10px;
 }
 
 .settings-container .container .map-container {
@@ -80,5 +83,66 @@ input::-webkit-inner-spin-button {
      object-fit: contain;
   -webkit-transform: translate(50%, -100%);
           transform: translate(50%, -100%);
+}
+
+.settings-container .settings-inputs {
+  margin: 40px auto;
+}
+
+.settings-container .settings-inputs .info {
+  color: #000000;
+  text-align: center;
+  font-weight: 600;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 24px;
+}
+
+.settings-container .settings-inputs > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.settings-container .settings-inputs label {
+  display: inline-block;
+  white-space: nowrap;
+  -webkit-margin-end: 20px;
+          margin-inline-end: 20px;
+}
+
+.settings-container .settings-inputs input {
+  display: inline-block;
+  background-color: #efefef;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  padding: 5px 15px;
+  text-align: center;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  width: 150px;
+}
+
+.settings-container .settings-inputs input::-webkit-input-placeholder {
+  font-weight: bold;
+}
+
+.settings-container .settings-inputs input:-ms-input-placeholder {
+  font-weight: bold;
+}
+
+.settings-container .settings-inputs input::-ms-input-placeholder {
+  font-weight: bold;
+}
+
+.settings-container .settings-inputs input::placeholder {
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200;400;600;700&display=swap");
 /*****************************************/
 body {
   margin: 0;
@@ -70,19 +70,7 @@ input::-webkit-inner-spin-button {
   padding: 6px 30px;
   background-color: #8c7ae6;
   color: #ffffff;
-<<<<<<< HEAD
-<<<<<<< HEAD
   border-radius: 10px;
-=======
-
-  border-radius: 10px;
-
->>>>>>> c1819e8f08e42eafa432110907ca0e62fa53d276
-=======
-
-  border-radius: 10px;
-
->>>>>>> 849572db5fd46d18f9bdeaf8139ec1ff24a6fbe0
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -137,19 +125,7 @@ input::-webkit-inner-spin-button {
   padding: 6px 30px;
   background-color: #8c7ae6;
   color: #ffffff;
-<<<<<<< HEAD
-<<<<<<< HEAD
   border-radius: 10px;
-=======
-
-  border-radius: 10px;
-
->>>>>>> c1819e8f08e42eafa432110907ca0e62fa53d276
-=======
-
-  border-radius: 10px;
-
->>>>>>> 849572db5fd46d18f9bdeaf8139ec1ff24a6fbe0
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -216,6 +192,7 @@ input::-webkit-inner-spin-button {
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
   border-radius: 30px;
   padding: 5px 15px;
+  font-weight: 600;
   text-align-last: center;
   width: 100%;
   height: 100%;

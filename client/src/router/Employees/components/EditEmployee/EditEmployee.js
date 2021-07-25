@@ -87,7 +87,7 @@ const EditEmployee = ({
               />
             </div>
             <div className="confirmation-button">
-              <button type="submit">اضافة</button>
+              <button type="submit">تعديل</button>
             </div>
           </form>
         </div>

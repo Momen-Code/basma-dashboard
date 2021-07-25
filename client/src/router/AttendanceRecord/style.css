@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200;400;600;700&display=swap");
 /*****************************************/
 body {
   margin: 0;
@@ -122,10 +122,14 @@ input::-webkit-inner-spin-button {
           transform-origin: 6px 4px;
 }
 
+.attendance-record-container .selection .search-item {
+  margin-left: 40px;
+}
+
 .attendance-record-container .selection .search-item input {
-  background-color: #EFEFEF;
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+  background-color: #efefef;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
   padding: 5px 15px;
   text-align-last: center;
@@ -134,7 +138,6 @@ input::-webkit-inner-spin-button {
   border: none;
   outline: none;
   font-weight: bold;
-  cursor: pointer;
 }
 
 .attendance-record-container .selection .search-item input::-webkit-input-placeholder {
@@ -151,10 +154,6 @@ input::-webkit-inner-spin-button {
 
 .attendance-record-container .selection .search-item input::placeholder {
   font-weight: bold;
-}
-
-.attendance-record-container .selection .date-picker-container {
-  margin-left: 40px;
 }
 
 .attendance-record-container .selection .date-picker-container .picker {
@@ -225,6 +224,19 @@ input::-webkit-inner-spin-button {
           transform: scale(0.95);
 }
 
+.attendance-record-container .loading-container {
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .attendance-record-container .table-container {
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
@@ -232,8 +244,15 @@ input::-webkit-inner-spin-button {
   overflow-x: auto;
   margin: 50px 20px;
   border-radius: 15px;
-  width: 70%;
-  margin: auto;
+  width: 1000px;
+  max-width: 95%;
+  margin: 0px auto 20px;
+  max-height: 650px;
+}
+
+.attendance-record-container .table-container::-webkit-scrollbar {
+  width: 0px;
+  height: 6px;
 }
 
 .attendance-record-container .table-container table {
@@ -288,6 +307,7 @@ input::-webkit-inner-spin-button {
 
 .attendance-record-container .table-container table tbody tr .purpleBg span {
   background-color: #8c7ae6;
+  padding: 4px 39px;
 }
 
 .attendance-record-container .table-container table tbody tr .blackBg span {
